@@ -1,0 +1,9 @@
+{
+  "license": "AGPL",
+  "scripts": {
+    "nodejs": "wasm-pack build --scope qqmee ./packages/account -d pkg/nodejs --target nodejs",
+    "web": "wasm-pack build --scope qqmee ./packages/account -d pkg/web --target web",
+    "bundler": "wasm-pack build --scope qqmee ./packages/account -d pkg/bundler --target bundler",
+    "build": "npm run nodejs && npm run web && npm run bundler"
+  }
+}

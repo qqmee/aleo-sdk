@@ -1,0 +1,43 @@
+[package]
+version = "0.1.2"
+name = "sdk-account"
+description = "SDK Account for Aleo blockchain"
+authors = ["NotWorking <team@aleochain.io>"]
+keywords = ["aleo", "blockchain", "wasm", "aleochain"]
+categories = ["cryptography::cryptocurrencies"]
+repository = "https://github.com/qqmee/aleo-sdk"
+license = "AGPL"
+edition = "2021"
+
+[profile.release]
+opt-level = "z"
+lto = true
+
+[features]
+default = ["wee_alloc"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies.rand]
+version = "0.8"
+
+[dependencies.rand_chacha]
+version = "0.3"
+
+[dependencies.snarkvm-wasm]
+git = "https://github.com/AleoHQ/snarkVM.git"
+rev = "71e39319" # testnet3 on Feb, 26
+default-features = false
+features = [ "dpc", "parallel" ]
+
+[dependencies.wasm-bindgen]
+version = "0.2"
+
+[dependencies.console_error_panic_hook]
+version = "0.1.7"
+optional = true
+
+[dependencies.wee_alloc]
+version = "0.4.5"
+optional = true

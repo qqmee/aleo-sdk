@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@qqmee/sdk-account-nodejs": "file:../../packages/account/pkg/nodejs"
+  }
+}
